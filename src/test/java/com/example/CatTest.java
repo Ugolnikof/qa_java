@@ -12,10 +12,10 @@ import static org.junit.Assert.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class CatTest {
-    Cat cat;
+    private Cat cat;
 
     @Mock
-    Feline feline;
+    private Feline feline;
 
     @Before
     public void setUp() {

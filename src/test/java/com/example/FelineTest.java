@@ -12,15 +12,16 @@ import static org.mockito.Mockito.verify;
 
 @RunWith(MockitoJUnitRunner.class)
 public class FelineTest {
+    private static final List<String> PREDATOR_FOOD = List.of("Животные", "Птицы", "Рыба");
 
     @Spy
-    Feline feline = new Feline();
+    private Feline feline = new Feline();
 
     @Test
     public void eatMeat() throws Exception {
         feline.eatMeat();
         verify(feline).eatMeat();
-        assertEquals(List.of("Животные", "Птицы", "Рыба"), feline.eatMeat());
+        assertEquals(PREDATOR_FOOD, feline.eatMeat());
     }
 
     @Test

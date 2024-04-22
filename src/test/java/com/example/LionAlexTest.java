@@ -12,10 +12,12 @@ import static org.junit.Assert.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class LionAlexTest {
-    LionAlex alex;
+    public static final List<String> ALEX_FRIENDS = List.of("зебра Марти", "бегемотиха Глория", "жираф Мелман");
+
+    private LionAlex alex;
 
     @Mock
-    Feline feline;
+    private Feline feline;
 
     @Before
     public void setUp() throws Exception {
@@ -29,7 +31,7 @@ public class LionAlexTest {
 
     @Test
     public void getFriends() {
-        assertEquals(List.of("зебра Марти", "бегемотиха Глория", "жираф Мелман"), alex.getFriends());
+        assertEquals(ALEX_FRIENDS, alex.getFriends());
     }
 
     @Test

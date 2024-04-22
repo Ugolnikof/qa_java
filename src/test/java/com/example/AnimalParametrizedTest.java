@@ -10,6 +10,9 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 public class AnimalParametrizedTest {
+    private static final List<String> HERBIVORE_FOOD = List.of("Трава", "Различные растения");
+    private static final List<String> PREDATOR_FOOD = List.of("Животные", "Птицы", "Рыба");
+
     private final String animalKind;
     private final List<String> foods;
 
@@ -21,8 +24,8 @@ public class AnimalParametrizedTest {
     @Parameterized.Parameters
     public static Object[][] initAnimalData() {
         return new Object[][] {
-                {"Травоядное", List.of("Трава", "Различные растения")},
-                {"Хищник", List.of("Животные", "Птицы", "Рыба")},
+                {"Травоядное", HERBIVORE_FOOD},
+                {"Хищник", PREDATOR_FOOD},
         };
     }
 

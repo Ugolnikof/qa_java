@@ -7,14 +7,18 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.*;
+
 
 @RunWith(MockitoJUnitRunner.class)
 public class LionTest {
-    Lion lion;
+    private static final String EXCEPTION_TEXT = "Используйте допустимые значения пола животного - самец или самка";
+
+    private Lion lion;
 
     @Mock
-    Feline feline;
+    private Feline feline;
 
     @Before
     public void setUp() throws Exception {
@@ -40,6 +44,7 @@ public class LionTest {
 
     @Test
     public void wrongSexSetUp() {
-        assertThrows(Exception.class, () -> new Lion("Самса", feline));
+        Exception exception = assertThrows(Exception.class, () -> lion = new Lion("Самса", feline));
+        assertEquals(EXCEPTION_TEXT, exception.getMessage());
     }
 }
