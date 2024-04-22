@@ -7,7 +7,6 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.*;
 
 
